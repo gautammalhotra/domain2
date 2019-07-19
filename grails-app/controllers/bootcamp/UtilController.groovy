@@ -9,8 +9,8 @@ class UtilController {
 
 
     def testConstraint() {
-        Employee employee = new Employee(firstName: "Puneet", lastName: "Kaur", email: "puneet@intelligrape.com",
-                password: "puneet")
+        Employee employee = new Employee(firstName: "gautam", lastName: "malhotra", email: "gautam.malhotra@rxlogix.com",
+                password: "gautam")
         employee.validate()
         employee.errors.allErrors.each {
             println "Errors" + it
@@ -19,8 +19,8 @@ class UtilController {
     }
 
     def saveFlow() {
-        Employee employee = new Employee(firstName: "Puneet", lastName: "Kaur", email: "puneet@intelligrape.com",
-                password: "puneet123")
+        Employee employee = new Employee(firstName: "gautam", lastName: "malhotra", email: "gautam.malhotra@rxlogix.com",
+                password: "gautam123")
         render employee.save(flush: true)
 
     }
@@ -33,7 +33,7 @@ class UtilController {
 def employee = Employee.get(1)
 println employee.version
 Thread.sleep(3000)
-employee.firstName = "puneet12"
+employee.firstName = "gautam12"
 employee.save(flush:true,failOnError:true)
 println employee.version
          */
@@ -72,7 +72,7 @@ println flight.destination.city
     }
 
     def messageTag() {
-        Employee employee = new Employee(firstName: "puneet",password: 'test',confirmPassword: 'hello')
+        Employee employee = new Employee(firstName: "gautam",password: 'test',confirmPassword: 'hello')
         if (employee.validate()) {
             employee.save()
             render "Saved object"

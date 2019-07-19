@@ -18,15 +18,15 @@ class EmployeeSpec extends Specification {
         where:
         sno | fname     | lname   | email     | password  | valid
         1   | ""        | "hello" | "a@b.com" | "test123" | false
-        1   | "Neha"    | "hello" | "puneet"  | "test123" | false
-        1   | "test123" | "hello" | "puneet"  | "test123" | true
+        1   | "Gautam"  | "hello" | "gautam"  | "test123" | false
+        1   | "test123" | "hello" | "gautam"  | "test123" | true
     }
 
     def "Email address of employee should be unique"() {
         setup:
-        String email = "puneet@tothenew.com"
+        String email = "gautam.malhotra@rxlogix.com"
         String password = 'password'
-        Employee employee = new Employee(firstName: "Puneet", lastName: "Kaur", email: email, password: password)
+        Employee employee = new Employee(firstName: "gautam", lastName: "malhotra", email: email, password: password)
 
         when:
         employee.save()
@@ -50,9 +50,9 @@ class EmployeeSpec extends Specification {
 
         where:
         firstName | lastName | name
-        "puneet"  | "kaur"   | "puneet kaur"
-        ""        | "kaur"   | "kaur"
-        null      | "kaur"   | "kaur"
+        "gautam"  | "malhotra"   | "gautam malhotra"
+        ""        | "malhotra"   | "malhotra"
+        null      | "malhotra"   | "malhotra"
         "neha"    | ""       | "neha"
         "neha"    | null     | "neha"
         null      | null     | ""
